@@ -1,5 +1,6 @@
 package utils;
 
+import factory.ConfigReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -14,7 +15,7 @@ public class WaitUtils {
     private static final Logger logger = LogManager.getLogger(SeleniumUtils.class);
 
     public static WebElement waitForElementToBeVisible(WebDriver webDriver, String xpath) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Long.parseLong(ConfigReader.get("timeout"))));
         try {
             return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         } catch (Exception e) {
@@ -24,7 +25,7 @@ public class WaitUtils {
     }
 
     public static WebElement waitForElementToBeClickable(WebDriver webDriver, String xpath) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Long.parseLong(ConfigReader.get("timeout"))));
         try {
             return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         } catch (Exception e) {
@@ -34,7 +35,7 @@ public class WaitUtils {
     }
 
     public static void waitForPageToRefresh(WebDriver webDriver, WebElement element) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(Long.parseLong(ConfigReader.get("timeout"))));
         try {
             wait.until(ExpectedConditions.stalenessOf(element));
         } catch (Exception e) {
