@@ -26,8 +26,6 @@ utils
  - WaitUtils
  - SeleniumUtils
 
-tests
- - YoutubeSearchTest
 
 Features:
 - Reusable WebDriver initialization
