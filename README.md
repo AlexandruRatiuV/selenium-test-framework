@@ -13,21 +13,21 @@ Design patterns implemented:
 
 Framework structure:
 driver
- ├─ DriverManager
- ├─ ChromeDriverManager
- ├─ DriverManagerFactory
+ - DriverManager
+ - ChromeDriverManager
+ - DriverManagerFactory
 
 pages
- ├─ YoutubeHomePage
- ├─ YoutubeLoginPage
- ├─ YoutubeResultPage
+ - YoutubeHomePage
+ - YoutubeLoginPage
+ - YoutubeResultPage
 
 utils
- ├─ WaitUtils
- ├─ SeleniumUtils
+ - WaitUtils
+ - SeleniumUtils
 
 tests
- ├─ YoutubeSearchTest
+ - YoutubeSearchTest
 
 Features:
 - Reusable WebDriver initialization
