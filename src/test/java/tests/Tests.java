@@ -3,7 +3,6 @@ package tests;
 import enums.DriverType;
 import factory.DriverManager;
 import factory.DriverManagerFactory;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,21 +27,16 @@ public class Tests {
     }
 
     @Test
-    public void enterSearchBarKeys(){
+    public void enterSearchBarKeys() {
         YoutubeMainPage youtubeMainPage = new YoutubeMainPage(webDriver);
         youtubeMainPage.clickOnRejectButton();
-        Assert.assertEquals(true,youtubeMainPage.searchFor("test").isSearchResultPresent("test"));
+        Assert.assertTrue(youtubeMainPage.searchFor("test").isSearchResultPresent("test"));
     }
 
     @Test
-    public void test(){
+    public void test() {
         YoutubeMainPage youtubeMainPage = new YoutubeMainPage(webDriver);
         youtubeMainPage.goToLogin().setInputEmail("test");
     }
 
-//    @After
-//    public void quitDriver() {
-//        webDriver.quit();
-//        webDriver = null;
-//    }
 }

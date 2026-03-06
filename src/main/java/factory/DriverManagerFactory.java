@@ -3,9 +3,9 @@ package factory;
 import enums.DriverType;
 
 public class DriverManagerFactory {
-    public static DriverManager getDriverManager(DriverType type){
+    public static DriverManager getDriverManager(DriverType type) {
         DriverManager driverManager;
-        switch (type){
+        switch (type) {
             case CHROME:
                 driverManager = new ChromeDriverManager();
             case FIREFOX:

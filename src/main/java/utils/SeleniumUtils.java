@@ -8,32 +8,28 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class SeleniumUtils extends WaitUtils{
-    private static Logger logger = LogManager.getLogger(SeleniumUtils.class);
+public class SeleniumUtils extends WaitUtils {
+    private static final Logger logger = LogManager.getLogger(SeleniumUtils.class);
 
-    public static WebElement findElement(WebDriver webDriver, String xpath){
-        try{
+    public static WebElement findElement(WebDriver webDriver, String xpath) {
+        try {
             return webDriver.findElement(By.xpath(xpath));
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             logger.error(e);
             return null;
         }
     }
 
-    public static List<WebElement> findElements(WebDriver webDriver, String xpath){
-        try{
+    public static List<WebElement> findElements(WebDriver webDriver, String xpath) {
+        try {
             return webDriver.findElements(By.xpath(xpath));
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             logger.error(e);
             return null;
         }
     }
 
-    public static String getTextFromElement(WebDriver webDriver, String xpath){
-        return findElement(webDriver,xpath).getText();
+    public static String getTextFromElement(WebDriver webDriver, String xpath) {
+        return findElement(webDriver, xpath).getText();
     }
-
-
 }
